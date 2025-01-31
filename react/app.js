@@ -1,4 +1,7 @@
+import React from 'react';
+import ReactDOM from 'react-dom/client';
 const heading=React.createElement('h1',{id:"first-tag",ccgj:"hgkhg"},"Hello World using React");
+
 console.log(heading);
 const root=ReactDOM.createRoot(document.getElementById("root"));
 
