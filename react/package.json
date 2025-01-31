@@ -1,0 +1,21 @@
+{
+  "name": "react",
+  "version": "1.0.0",
+  "description": "this is my react journey",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "(https://github.com/sachinyadav-10/React-Learnings.git)"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "Sachin",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.13.3" 
+  }
+} 
