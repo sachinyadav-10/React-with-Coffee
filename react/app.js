@@ -1,33 +1,70 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-// React Element
-const JSXHeading= ()=> (
-    <h1 className='heading 1'>
-    Sachin this side !!!!!
-    </h1>
-    );
-const number = 6000;
-const Title=(
-    {number},    
-    <h1 className='heading 1'>
-    it happened by react element not reacat Component !!!!!
-    </h1>
-    );
-// react component-->
-// 1) class based.... old way to write ... use JS Classes
-// 2)functional .... new way of writing of code.. use fuction of JS
-const HeadingComponent= ()=>(
-    <div>
-        {JSXHeading()}
-        {number}
-        <JSXHeading/>
-        <h1> king is here my darling &&&</h1>
-    </div>
-)
 
+const Header =()=>{
+    return (
+        <div className='header'>
+            <div className='logo-container'>
+                {/* logo */}
+                <img className='logo' src='https://img.freepik.com/premium-vector/food-ordering-app-logo-with-points-fork-shapes-center_666184-195.jpg'/>
+            </div>
+            <div className='nav-items'>
+                <ul>
+                    <li>Home</li>
+                    <li>About US</li>
+                    <li>Contact Us</li>
+                    <li>Help</li>
+                    <li>Cart</li>
+                </ul>
+            </div>
+
+        </div>
+    )
+};
+const StyleCard={
+    backgroundColor:'#f0f0f0',
+};
+const RestaurentCard =({resName})=>{
+    // const{resname,cuisine,...}=props ----> destructuring on fly
+    // console.log(props);
+    
+    return(
+        <div className='res-card'>
+            <img className='rescard-logo' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwiOVVrTdtJ9Z5RJeuRFc2dIRrmBddvlaPfQ&s' alt='Cheese fried momos'></img>
+            <h3>{resName}</h3>
+            <h4>Muskan's Favourate Love</h4>
+            <h4>4.7</h4>
+            <h4>38 Minutes</h4>
+        </div>
+    )
+}
+const Body=()=>{
+    return (
+        <div className='body'>
+            <div className='searchbar'>Search</div>
+            <div className='res-container'>
+                {/* restaurentCard */}
+                <RestaurentCard resName="Kaish Momos" />
+                <RestaurentCard resName="Tan-Sukh"/>
+                <RestaurentCard resName="Jain Chat" />
+                <RestaurentCard resName="Burger King" />
+                <RestaurentCard resName="Nutraj Thali"/>
+                <RestaurentCard resName="Rawat"/>
+            </div>
+        </div>
+    )
+}
+
+const AppLayout = ()=>{
+    return (
+        <div className='app'> 
+            {/* Header */}
+            <Header/>
+            {/* body */}
+            <Body/>
+            {/* Footer */}
+        </div>
+    )
+}
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<HeadingComponent/>);
-//  JSX also not any HTML insdie JS 
-// JSX is HTML like syntax , it is jsx only not any html ot js or anything other stuff
-console.log(JSXHeading);
-// JSX-->(bable)-->react element(JS OBJECT)-->html and js -->render to browser
+root.render(<AppLayout/>);
