@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "this is my react journey",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "start":"parcel index.html",
+    "bulid":"parcel build index.html"
+
   },
   "repository": {
     "type": "git",
