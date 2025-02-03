@@ -22,7 +22,6 @@
  .res-card{
     padding: 5px;
     width: 200px;
-    height: 300px;
     border: 1px solid black;
     box-shadow: 1px 1px 1px;
     line-height: 2px;
@@ -34,4 +33,9 @@
  .res-container{
     display: flex;
     flex-wrap: wrap;
+ }
+ .filter-btn{
+      margin: 10px;
+      padding: 3px;
+      cursor: pointer;
  }
