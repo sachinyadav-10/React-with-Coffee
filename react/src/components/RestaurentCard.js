@@ -1,18 +1,20 @@
-import { Hotel_Photo } from "../utils/constants";
-const RestaurentCard =({resData})=>{
-    // const{resname,cuisine,...}=props ----> destructuring on fly
-    // console.log(props);
-    const{RestaurantName,Cuisines,Rating,PriceForTwo,DeliveryTime}=resData;
-    // console.log(data);
-    return(
-        <div className='res-card'>
-            <img className='rescard-logo' src={Hotel_Photo}alt='Cheese fried momos'></img>
-            <h3>{RestaurantName}</h3>
-            <h4>{Cuisines}</h4>
-            <h4>{Rating + '/5'}</h4>
-            <h4>{PriceForTwo+"$ For Two"}</h4>
-            <h4>{DeliveryTime}</h4>
-        </div>
-    )
-}
-export default RestaurentCard;
+const RestaurantCard = ({ resData }) => {
+  const { name, cuisines, avgRating, costForTwo, cloudinaryImageId, sla } = resData.info;
+
+  return (
+    <div className='res-card'>
+      <img
+        className='rescard-logo'
+        src={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/${cloudinaryImageId}`}
+        alt={name}
+      />
+      <h3>{name}</h3>
+      <h4>{cuisines.join(", ")}</h4>
+      <h4>{avgRating} ⭐</h4>
+      <h4>{costForTwo}</h4>
+      <h4>{sla?.deliveryTime} mins</h4>
+    </div>
+  );
+};
+
+export default RestaurantCard;

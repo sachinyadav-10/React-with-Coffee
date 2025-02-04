@@ -1,108 +1,95 @@
 const resData = [
-    {
-      "RestaurantName": "Spice Villa",
-      "Cuisines": ["Indian", "Chinese"],
-      "Rating": 4.5,
-      "PriceForTwo": 800,
-      "DeliveryTime": "30 mins"
+  {
+    "info": {
+      "id": "1005819",
+      "name": "Chinese Wok",
+      "cloudinaryImageId": "RX_THUMBNAIL/IMAGES/VENDOR/2024/12/10/7ddcb9d2-f9b9-4f95-a932-9c09178a5dac_1005819.jpg",
+      "locality": "New Sanganer road",
+      "areaName": "R tech Emporio",
+      "costForTwo": "₹250 for two",
+      "cuisines": [
+        "Chinese",
+        "Asian",
+        "Tibetan",
+        "Desserts"
+      ],
+      "avgRating": 4.7,
+      "parentId": "61955",
+      "avgRatingString": "4.7",
+      "totalRatingsString": "32",
+      "sla": {
+        "deliveryTime": 39,
+        "lastMileTravel": 6,
+        "serviceability": "SERVICEABLE",
+        "slaString": "35-40 mins",
+        "lastMileTravelString": "6.0 km",
+        "iconType": "ICON_TYPE_EMPTY"
+      },
+      "availability": {
+        "nextCloseTime": "2025-02-04 23:00:00",
+        "opened": true
+      },
+    "widgetId": "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo"
+  },
+ },
+  {
+    "info": {
+      "id": "47598",
+      "name": "Pizza Hut",
+      "cloudinaryImageId": "2b4f62d606d1b2bfba9ba9e5386fabb7",
+      "locality": "GT Central",
+      "areaName": "Malviya Nagar",
+      "costForTwo": "₹350 for two",
+      "cuisines": [
+        "Pizzas"
+      ],
+      "avgRating": 4,
+      "parentId": "721",
+      "avgRatingString": "4.0",
+      "totalRatingsString": "10K+",
+      "sla": {
+        "deliveryTime": 38,
+        "lastMileTravel": 5.7,
+        "serviceability": "SERVICEABLE",
+        "slaString": "35-40 mins",
+        "lastMileTravelString": "5.7 km",
+        "iconType": "ICON_TYPE_EMPTY"
+      },
+      "availability": {
+        "nextCloseTime": "2025-02-05 04:00:00",
+        "opened": true
+      },
+    "widgetId": "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo"
+  },
+ },
+ {
+    "info": {
+      "id": "45913",
+      "name": "Subway",
+      "cloudinaryImageId": "RX_THUMBNAIL/IMAGES/VENDOR/2025/1/21/62118462-dd11-433f-9adb-f3be145059a3_45913.JPG",
+      "locality": "Crystal Court Mall",
+      "areaName": "Malviya Nagar",
+      "costForTwo": "₹200 for two",
+      "cuisines": [
+        "sandwich",
+        "Salads",
+        "wrap",
+        "Healthy Food"
+      ],
+      "avgRating": 4.2,
+      "parentId": "2",
+      "avgRatingString": "4.2",
+      "totalRatingsString": "17K+",
+      "sla": {
+        "deliveryTime": 38
+      },
+      "availability": {
+        "nextCloseTime": "2025-02-04 23:59:00",
+        "opened": true
+      },
+      "ratingsDisplayPreference": "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY"
     },
-    {
-      "RestaurantName": "Burger Haven",
-      "Cuisines": ["American", "Fast Food"],
-      "Rating": 3.3,
-      "PriceForTwo": 600,
-      "DeliveryTime": "25 mins"
-    },
-    {
-      "RestaurantName": "Sushi Delight",
-      "Cuisines": ["Japanese", "Sushi"],
-      "Rating": 4.7,
-      "PriceForTwo": 1200,
-      "DeliveryTime": "40 mins"
-    },
-    {
-      "RestaurantName": "Pasta Paradise",
-      "Cuisines": ["Italian", "Continental"],
-      "Rating": 4.6,
-      "PriceForTwo": 900,
-      "DeliveryTime": "35 mins"
-    },
-    {
-      "RestaurantName": "Tandoori Nights",
-      "Cuisines": ["Indian", "Mughlai"],
-      "Rating": 2.4,
-      "PriceForTwo": 850,
-      "DeliveryTime": "30 mins"
-    },
-    {
-      "RestaurantName": "Chopstick House",
-      "Cuisines": ["Chinese", "Thai"],
-      "Rating": 4.2,
-      "PriceForTwo": 750,
-      "DeliveryTime": "28 mins"
-    },
-    {
-      "RestaurantName": "Green Leaf",
-      "Cuisines": ["Vegan", "Healthy"],
-      "Rating": 4.8,
-      "PriceForTwo": 1000,
-      "DeliveryTime": "32 mins"
-    },
-    {
-      "RestaurantName": "BBQ Nation",
-      "Cuisines": ["Barbecue", "Grill"],
-      "Rating": 1.5,
-      "PriceForTwo": 1100,
-      "DeliveryTime": "45 mins"
-    },
-    {
-      "RestaurantName": "MexiFlavors",
-      "Cuisines": ["Mexican", "Tex-Mex"],
-      "Rating": 4.3,
-      "PriceForTwo": 700,
-      "DeliveryTime": "27 mins"
-    },
-    {
-      "RestaurantName": "Arabian Feast",
-      "Cuisines": ["Middle Eastern", "Lebanese"],
-      "Rating": 4.6,
-      "PriceForTwo": 950,
-      "DeliveryTime": "33 mins"
-    },
-    {
-      "RestaurantName": "Biryani Junction",
-      "Cuisines": ["Indian", "Hyderabadi"],
-      "Rating": 4.7,
-      "PriceForTwo": 880,
-      "DeliveryTime": "29 mins"
-    },
-    {
-      "RestaurantName": "Pizza Mania",
-      "Cuisines": ["Italian", "Pizza"],
-      "Rating": 3.2,
-      "PriceForTwo": 650,
-      "DeliveryTime": "26 mins"
-    },
-    {
-      "RestaurantName": "The French Corner",
-      "Cuisines": ["French", "Bakery"],
-      "Rating": 4.8,
-      "PriceForTwo": 1300,
-      "DeliveryTime": "38 mins"
-    },
-    {
-      "RestaurantName": "South Spice",
-      "Cuisines": ["South Indian"],
-      "Rating": 4.4,
-      "PriceForTwo": 750,
-      "DeliveryTime": "28 mins"
-    },
-    {
-      "RestaurantName": "Street Bites",
-      "Cuisines": ["Fast Food", "Street Food"],
-      "Rating": 3.1,
-      "PriceForTwo": 500,
-      "DeliveryTime": "22 mins"
-    }
-  ]
+  "widgetId": "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo"
+  }
+]
 export default resData;  
