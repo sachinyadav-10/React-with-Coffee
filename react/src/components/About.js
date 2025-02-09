@@ -1,4 +1,5 @@
 import User from "./User";
+import UserClass from "./UserClass";
 
 const About= ()=>{
     return (
@@ -6,6 +7,7 @@ const About= ()=>{
             <h1> About</h1>
             <h2> This is the about page</h2>
             <User/>
+            <UserClass/>
         </div>
     );
 };
