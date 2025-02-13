@@ -3,3 +3,5 @@ export const LOGO_URL='https://img.freepik.com/premium-vector/food-ordering-app-
 export const Hotel_Photo='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwiOVVrTdtJ9Z5RJeuRFc2dIRrmBddvlaPfQ&s' ;
 
 export const MENU_API ="https://www.swiggy.com/mapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=26.818758&lng=75.7972135&restaurantId=";
+
+export const CDN_URL="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"
