@@ -1,7 +1,14 @@
 import React from 'react';
 import { CDN_URL } from '../utils/constants';
+import { useDispatch } from 'react-redux';
+import { addItems } from '../utils/cartSlice';
 
 const ItemList = ({ items }) => {
+const dispatch = useDispatch();
+const handelAddItem =(item)=>{
+    //dispatch and action
+    dispatch(addItems(item));
+}
     return (
         <div className='w-10/16 flex flex-col content-center justify-center'>
             {items.map((item) => (
@@ -17,7 +24,10 @@ const ItemList = ({ items }) => {
                     </div>
                     <div className='max-w-40  '>
                         <img src={CDN_URL + item.card.info.imageId} className='w-56 rounded-3xl' alt={item.card.info.name} />
-                        <button className='p-2 mx-15 rounded-lg bg-white shadow-lg '> ADD +</button>
+                        <button 
+                        className='p-2 mx-15 rounded-lg bg-white shadow-lg '
+                        onClick={()=>handelAddItem(item)}
+                        > ADD +</button>
                     </div>
                         <div className='absolute justify-end'>
                         </div>

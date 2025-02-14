@@ -5,18 +5,19 @@ import { MENU_API } from "../utils/constants";
 import RestaurentCategory from "./RestaurentCategory";
 
 const ResMenu = () => {
-    const [resinfo, setresinfo] = useState(null);
+    const [resinfo, setResInfo] = useState(null);
     const { resid } = useParams();
+    const [showIndex, setShowIndex] = useState(null); // Use null to indicate no category is expanded
 
     useEffect(() => {
-        fetchmenu();
+        fetchMenu();
     }, []);
 
-    const fetchmenu = async () => {
+    const fetchMenu = async () => {
         try {
             const data = await fetch(MENU_API + resid);
             const json = await data.json();
-            setresinfo(json.data);
+            setResInfo(json.data);
         } catch (error) {
             console.error("Failed to fetch menu:", error);
         }
@@ -24,24 +25,35 @@ const ResMenu = () => {
 
     if (resinfo === null) return <Shimmer />;
 
-    const resdetail = resinfo?.cards[2]?.card?.card?.info;
-    const itemCards = resinfo?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.itemCards || [];
-    const catagories = resinfo?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
+    const resDetail = resinfo?.cards[2]?.card?.card?.info;
+    const categories = resinfo?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
         (c) => c.card?.card?.["@type"] === 
         "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
     ) || [];
 
-    if (!resdetail || !catagories) return <Shimmer />;
+    if (!resDetail || !categories) return <Shimmer />;
 
-    const { name, cuisines, costForTwoMessage } = resdetail;
+    const { name, cuisines, costForTwoMessage } = resDetail;
 
     return (
         <div className="text-center">
             <h1 className="font-bold my-6 text-3xl">{name}</h1>
             <p className="text-lg font-bold">{cuisines.join(", ")}</p>
-            {catagories.map((category, index) => (
-                <div >
-                    <RestaurentCategory key={category?.card?.card?.id || index} data={category?.card?.card} />
+            {categories.map((category, index) => (
+                <div key={category?.card?.card?.id || index}>
+                    <RestaurentCategory 
+                        data={category?.card?.card} 
+                        showItems={index === showIndex} // Pass whether this category is expanded
+                        setShowIndex={() => {
+                            // If the clicked category is already expanded, collapse it
+                            if (showIndex === index) {
+                                setShowIndex(null);
+                            } else {
+                                // Otherwise, expand the clicked category
+                                setShowIndex(index);
+                            }
+                        }}
+                    />
                 </div>
             ))}
         </div>

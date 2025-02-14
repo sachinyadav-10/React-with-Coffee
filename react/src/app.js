@@ -6,15 +6,21 @@ import Body from './components/Body.js';
 import ResMenu from './components/ResMenu.js';
 import About from './components/About.js';
 import ContactUs from './components/ContactUs.js';
+import { Provider } from 'react-redux';
+import appStore from './utils/appSore.js';
+import Cart from './components/Cart.js';
 
+ 
 // Define the AppLayout component
 const AppLayout = () => {
     return (
-        <div className='app'> 
-            <Header />
-            <Outlet/>
-            {/* Add Footer here if needed */}
-        </div>
+        <Provider store={appStore}> 
+            <div className='app'> 
+                <Header />
+                <Outlet/>
+                {/* Add Footer here if needed */}
+            </div>
+        </Provider>
     );
 };
 
@@ -39,6 +45,10 @@ const appRouter = createBrowserRouter([
                 {
                     path : "/restaurants/:resid",
                     element: <ResMenu/>
+                },
+                {
+                    path : "/cart",
+                    element : <Cart/>
                 }
             ]
         },
